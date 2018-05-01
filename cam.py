@@ -1,8 +1,14 @@
 import numpy as np
 import cv2
 
-cap = cv2.VideoCapture(0)
+try:
+    cap = cv2.VideoCapture(0)
 
+except:
+    print("Can't capture video")
+    exit(1)
+
+    
 while(cap.isOpened()):
     # Capture frame-by-frame
     ret, frame = cap.read()
